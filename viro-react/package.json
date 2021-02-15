@@ -1,0 +1,34 @@
+{
+  "name": "viroReactProto",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "xprestart": "./node_modules/react-viro/bin/run_ngrok.sh",
+    "xstart": "node node_modules/react-native/local-cli/cli.js start",
+    "start:android:gvr": "react-native run-android --variant=gvrDebug",
+    "start:android:ovr": "react-native run-android --variant=ovrDebug",
+    "start:android": "npm run start:android:gvr",
+    "clean:android": "(cd android && ./gradlew clean)",
+    "start:ios": "react-native run-ios",
+    "start:adb": "adb reverse tcp:8081 tcp:8081",
+    "open:ios": "cd ios && open viroReactProto.xcworkspace",
+    "test": "jest"
+  },
+  "dependencies": {
+    "react": "16.8.3",
+    "react-native": "0.59.9",
+    "react-viro": "2.17.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.16",
+    "@babel/runtime": "7.12.13",
+    "babel-jest": "26.6.3",
+    "create-react-class": "^15.7.0",
+    "jest": "26.6.3",
+    "metro-react-native-babel-preset": "0.65.0",
+    "react-test-renderer": "17.0.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
