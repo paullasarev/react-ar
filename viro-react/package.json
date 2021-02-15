@@ -5,13 +5,16 @@
   "scripts": {
     "xprestart": "./node_modules/react-viro/bin/run_ngrok.sh",
     "xstart": "node node_modules/react-native/local-cli/cli.js start",
-    "start:android:gvr": "react-native run-android --variant=gvrDebug",
-    "start:android:ovr": "react-native run-android --variant=ovrDebug",
-    "start:android": "npm run start:android:gvr",
-    "clean:android": "(cd android && ./gradlew clean)",
-    "start:ios": "react-native run-ios",
-    "start:adb": "adb reverse tcp:8081 tcp:8081",
-    "open:ios": "cd ios && open viroReactProto.xcworkspace",
+    "android:start:gvr": "react-native run-android --variant=gvrDebug",
+    "android:start:ovr": "react-native run-android --variant=ovrDebug",
+    "android:start": "npm run android:start:gvr",
+    "android:clean": "(cd android && ./gradlew clean)",
+    "android:adb": "adb reverse tcp:8081 tcp:8081",
+    "ios:start": "react-native run-ios",
+    "ios:install": "npm i && cd ios && pod install",
+    "ios:open-project": "cd ios && open viroReactProto.xcworkspace",
+    "clean:watch": "watchman watch-del-all",
+    "clean:cache": "npx react-native start --reset-cache",
     "test": "jest"
   },
   "dependencies": {
